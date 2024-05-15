@@ -1,13 +1,13 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from cdk_lambda_devcontainer.cdk_lambda_devcontainer_stack import CdkLambdaDevcontainerStack
+from cdk_lambda.cdk_lambda_stack import CdkLambdaStack
 
 # example tests. To run these tests, uncomment this file along with the example
-# resource in cdk_lambda_devcontainer/cdk_lambda_devcontainer_stack.py
+# resource in cdk_lambda/cdk_lambda_stack.py
 def test_sqs_queue_created():
     app = core.App()
-    stack = CdkLambdaDevcontainerStack(app, "cdk-lambda-devcontainer")
+    stack = CdkLambdaStack(app, "cdk-lambda")
     template = assertions.Template.from_stack(stack)
 
 #     template.has_resource_properties("AWS::SQS::Queue", {
